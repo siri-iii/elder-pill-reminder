@@ -1,0 +1,7 @@
+<view class="about-container">
+  <view class="about-title">关于我们</view>
+  <view class="about-content">
+    AMIKA 智能服药助手，致力于为老年人和家属提供贴心、智能的健康守护服务。
+    <br/>我们的使命：因爱守护每一刻。
+  </view>
+</view> 
