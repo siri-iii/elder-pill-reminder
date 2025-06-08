@@ -1,0 +1,13 @@
+<!-- pages/caregiverMonitor/caregiverMonitor.wxml -->
+<view class="container">
+  <view class="medicine-list">
+    <view class="list-title">药品清单</view>
+    <block wx:for="{{medicines}}" wx:key="index">
+      <view class="medicine-item">
+        <text>{{item.name}} - {{item.dosage}}</text>
+        <text>{{item.time}}</text>
+      </view>
+    </block>
+  </view>
+  <button class="settings-button" bindtap="goToMedicineSettings">药品设置</button>
+</view>

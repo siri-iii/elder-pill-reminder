@@ -1,0 +1,20 @@
+/* pages/caregiverMonitor/caregiverMonitor.wxss */
+.container {
+  padding: 20px;
+}
+.medicine-list {
+  margin-bottom: 20px;
+}
+.list-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.medicine-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.settings-button {
+  width: 100%;
+}

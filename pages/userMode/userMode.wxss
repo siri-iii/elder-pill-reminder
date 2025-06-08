@@ -1,0 +1,18 @@
+/* pages/userMode/userMode.wxss */
+.container {
+  padding: 20px;
+  text-align: center;
+}
+.title {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+.button-group {
+  display: flex;
+  flex-direction: column;
+}
+.mode-button {
+  margin: 10px 0;
+  padding: 15px 30px;
+  font-size: 18px;
+}

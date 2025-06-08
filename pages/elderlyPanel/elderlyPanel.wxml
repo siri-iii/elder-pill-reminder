@@ -1,0 +1,8 @@
+<!-- pages/elderlyPanel/elderlyPanel.wxml -->
+<view class="container">
+  <view class="button-group">
+    <button class="panel-button" bindtap="goToChat">与大模型聊天</button>
+    <button class="panel-button" bindtap="goToMedicineInfo">药物知识科普</button>
+    <button class="panel-button" bindtap="goToQuickCheckin">一键打卡已服用</button>
+  </view>
+</view>

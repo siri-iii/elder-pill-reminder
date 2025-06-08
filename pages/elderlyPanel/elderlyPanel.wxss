@@ -1,0 +1,16 @@
+/* pages/elderlyPanel/elderlyPanel.wxss */
+.container {
+  padding: 20px;
+}
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.panel-button {
+  width: 80%;
+  margin: 10px 0;
+  padding: 20px 0;
+  font-size: 18px;
+  background-color: #f0f0f0;
+}
