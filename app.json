@@ -2,6 +2,9 @@
   "pages": [
     "pages/userMode/userMode",
     "pages/caregiverMonitor/caregiverMonitor",
+    "pages/elderlyManage/elderlyManage",
+    "pages/addMedicine/addMedicine",
+    "pages/checkinStatus/checkinStatus",
     "pages/medicineSettings/medicineSettings",
     "pages/elderlyPanel/elderlyPanel",
     "pages/quickCheckin/quickCheckin"

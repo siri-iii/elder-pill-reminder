@@ -17,5 +17,14 @@ Page({
     wx.navigateTo({
       url: '/pages/medicineSettings/medicineSettings'
     })
+  },
+  goToElderlyManage() {
+    wx.navigateTo({ url: '/pages/elderlyManage/elderlyManage' })
+  },
+  goToAddMedicine() {
+    wx.navigateTo({ url: '/pages/addMedicine/addMedicine' })
+  },
+  goToCheckinStatus() {
+    wx.navigateTo({ url: '/pages/checkinStatus/checkinStatus' })
   }
 })

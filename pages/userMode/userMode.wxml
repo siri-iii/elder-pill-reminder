@@ -5,6 +5,7 @@
     <view class="slogan">因爱守护每一刻</view>
     <view class="title">欢迎使用 AMIKA 智能服药助手</view>
     <view class="subtitle">请选择您的使用模式</view>
+    <image class="speaker-icon" src="/images/speaker.png" bindtap="onSpeakerTap" mode="aspectFit" />
     
     <view class="mode-container">
       <view class="mode-card" bindtap="selectMode" data-mode="elderly">
