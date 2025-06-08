@@ -55,7 +55,7 @@
   display: flex;
   justify-content: space-around;
   padding: 0 40rpx;
-  margin-top: 40rpx;
+  margin-top: 80rpx;
   margin-bottom: 60rpx;
 }
 
@@ -147,4 +147,11 @@
 }
 .high-contrast .footer-link {
   color: #fff !important;
+}
+
+.speaker-icon {
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+  margin: 0 auto 40rpx auto;
 }

@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="card">
+    <view class="card-header">
+      <view class="title">查询老人服药打卡情况</view>
+    </view>
+    <view class="divider"></view>
+    <view class="elder-select-area">
+      <view class="elder-select-label">选择老人</view>
+      <picker mode="selector" range="{{elderNames}}" value="{{elderIndex}}" bindchange="onElderChange">
+        <view class="elder-select-value">{{elderNames[elderIndex] || '请选择老人'}}</view>
+      </picker>
+    </view>
+    <view class="divider"></view>
+    <view class="date-select-area">
+      <view class="elder-select-label">选择日期</view>
+      <picker mode="date" value="{{date}}" bindchange="onDateChange">
+        <view class="elder-select-value">{{date}}</view>
+      </picker>
+    </view>
+    <view class="divider"></view>
+    <view class="record-list">
+      <block wx:for="{{records}}" wx:key="index">
+        <view class="record-item">
+          <view class="record-info">
+            <view class="record-medicine">{{item.medicine}}</view>
+            <view class="record-time">应服时间：{{item.time}}</view>
+          </view>
+          <view class="record-status {{item.status}}">
+            {{item.status === 'missed' ? '漏服' : (item.status === 'done' ? '已服药' : '未打卡')}}
+          </view>
+        </view>
+      </block>
+      <view wx:if="{{records.length === 0}}" class="no-record">暂无打卡记录</view>
+    </view>
+  </view>
+</view> 

@@ -85,5 +85,13 @@ Page({
   },
   goPrivacy() {
     wx.navigateTo({ url: '/pages/userMode/privacy' })
+  },
+
+  onSpeakerTap() {
+    wx.showToast({
+      title: '可以朗读页面内容',
+      icon: 'none',
+      duration: 2000
+    })
   }
 })

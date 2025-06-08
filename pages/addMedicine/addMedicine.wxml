@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="card">
+    <view class="card-header">
+      <view class="title">为老人添加药品信息</view>
+      <view class="icon-bg">
+        <image class="top-icon" src="/images/medicine-icon.png" mode="aspectFit" />
+      </view>
+    </view>
+    <view class="divider"></view>
+    <view class="elder-select-area">
+      <view class="elder-select-label">选择老人</view>
+      <picker mode="selector" range="{{elderNames}}" value="{{elderIndex}}" bindchange="onElderChange">
+        <view class="elder-select-value">{{elderNames[elderIndex] || '请选择老人'}}</view>
+      </picker>
+    </view>
+    <view class="divider"></view>
+    <form bindsubmit="onSubmit">
+      <view class="form-group">
+        <view class="form-label">药品名称</view>
+        <input class="form-input" name="name" value="{{form.name}}" bindinput="onNameInput" />
+      </view>
+      <view class="form-group">
+        <view class="form-label">药品图片</view>
+        <view class="medicine-img-wrap" bindtap="chooseImage">
+          <image class="medicine-img" src="{{form.img || '/images/medicine-placeholder.png'}}" mode="aspectFit" />
+          <image wx:if="{{!form.img}}" class="add-icon" src="/images/add-icon.png" mode="aspectFit" />
+        </view>
+      </view>
+      <view class="form-group">
+        <view class="form-label">药品功能/用途</view>
+        <textarea class="form-input textarea" name="function" value="{{form.function}}" bindinput="onFunctionInput" />
+      </view>
+      <view class="form-group">
+        <view class="form-label">服用频次</view>
+        <input class="form-input" name="frequency" value="{{form.frequency}}" bindinput="onFrequencyInput" />
+      </view>
+      <button class="submit-btn" formType="submit">添加药品</button>
+    </form>
+    <view class="tips">请确保药品信息准确，便于老人按时服药。</view>
+  </view>
+</view> 
