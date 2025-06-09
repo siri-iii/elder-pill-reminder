@@ -1,0 +1,48 @@
+<view class="container">
+  <view class="title">老人信息管理</view>
+  <view class="elder-list">
+    <block wx:for="{{elders}}" wx:key="index">
+      <view class="elder-card">
+        <image class="elder-avatar-large" src="/images/elderly-{{item.gender === '女' ? 'female' : 'male'}}.png" mode="aspectFit" data-index="{{index}}" bindtap="showElderDetail" />
+        <view class="elder-info-centered">
+          <view class="elder-name-large">{{item.name}}</view>
+          <view class="elder-detail-small">性别：{{item.gender}} ｜ 年龄：{{item.age}}</view>
+        </view>
+        <button class="delete-btn" data-index="{{index}}" bindtap="deleteElder">删除</button>
+      </view>
+    </block>
+    <view class="elder-card add-card" bindtap="showAddForm">
+      <image class="add-icon" src="/images/add-icon.png" mode="aspectFit" />
+      <text class="add-text">添加老人</text>
+    </view>
+  </view>
+  <view wx:if="{{showForm}}" class="form-mask">
+    <view class="form-dialog">
+      <view class="form-title">添加老人信息</view>
+      <input class="form-input" placeholder="姓名" value="{{form.name}}" bindinput="onNameInput" />
+      <picker class="form-input" mode="selector" range="{{genderOptions}}" value="{{form.genderIndex}}" bindchange="onGenderChange">
+        <view>性别：{{genderOptions[form.genderIndex]}}</view>
+      </picker>
+      <input class="form-input" type="number" placeholder="年龄" value="{{form.age}}" bindinput="onAgeInput" />
+      <input class="form-input" placeholder="病情信息（可选）" value="{{form.condition}}" bindinput="onConditionInput" />
+      <view class="form-btns">
+        <button class="form-btn" bindtap="addElder">添加</button>
+        <button class="form-btn cancel" bindtap="hideAddForm">取消</button>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{showDetail}}" class="form-mask">
+    <view class="form-dialog detail-dialog">
+      <view class="form-title">老人详细信息</view>
+      <image class="elder-avatar" src="/images/elderly-{{elders[detailIndex].gender === '女' ? 'female' : 'male'}}.png" mode="aspectFit" style="margin: 0 auto 24rpx auto;box-shadow:0 4rpx 16rpx #ffd6c2;" />
+      <view class="elder-name" style="text-align:center;font-size:36rpx;margin-bottom:8rpx;">{{elders[detailIndex].name}}</view>
+      <view class="elder-detail" style="text-align:center;">性别：{{elders[detailIndex].gender}} ｜ 年龄：{{elders[detailIndex].age}}</view>
+      <view class="elder-condition" style="text-align:center;margin:16rpx 0 0 0;color:#d94f30;font-size:28rpx;">
+        {{elders[detailIndex].condition ? ('病情信息：' + elders[detailIndex].condition) : '暂无病情信息'}}
+      </view>
+      <view class="form-btns" style="margin-top:32rpx;">
+        <button class="form-btn" bindtap="hideElderDetail">关闭</button>
+      </view>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,184 @@
+/* pages/elderlyPanel/elderlyPanel.wxss */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+  background: linear-gradient(180deg, #fff6f0 0%, #ffe3d3 100%);
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #d94f30;
+  margin-top: 60rpx;
+  text-align: center;
+}
+
+.font-size-control {
+  display: flex;
+  gap: 20rpx;
+}
+
+.font-size-btn {
+  font-size: 40rpx;
+  color: #d94f30;
+  padding: 10rpx 20rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(217, 79, 48, 0.1);
+}
+
+.font-size-btn:active {
+  background: #fff6f0;
+  transform: scale(0.95);
+}
+
+.subtitle {
+  font-size: 38rpx;
+  color: #666;
+  margin-top: 20rpx;
+  margin-bottom: 60rpx;
+  text-align: center;
+}
+
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40rpx;
+}
+
+.card {
+  width: 90%;
+  background: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 12rpx 36rpx rgba(217, 79, 48, 0.12);
+  border: 4rpx solid transparent;
+  padding: 40rpx 0 32rpx 0;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.1s;
+}
+
+.card:active {
+  border: 4rpx solid #d94f30;
+  box-shadow: 0 16rpx 48rpx rgba(217, 79, 48, 0.18);
+  transform: scale(0.97);
+}
+
+.card-icon {
+  width: 140rpx;
+  height: 140rpx;
+  margin-bottom: 20rpx;
+}
+
+.card-title {
+  font-size: 44rpx;
+  color: #d94f30;
+  font-weight: 600;
+  letter-spacing: 2rpx;
+  margin-top: 10rpx;
+}
+
+.card-desc {
+  font-size: 34rpx;
+  color: #888;
+  margin-top: 8rpx;
+  text-align: center;
+}
+
+.function-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30rpx;
+  padding: 20rpx;
+}
+
+.function-item {
+  background-color: white;
+  border-radius: 36rpx;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 12rpx 36rpx rgba(217, 79, 48, 0.12);
+  border: 4rpx solid transparent;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.1s;
+}
+
+.function-item:active {
+  border: 4rpx solid #d94f30;
+  box-shadow: 0 16rpx 48rpx rgba(217, 79, 48, 0.18);
+  transform: scale(0.97);
+}
+
+.icon-wrapper {
+  width: 120rpx;
+  height: 120rpx;
+  background-color: #fff6f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+
+.function-icon {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.function-name {
+  font-size: 32rpx;
+  color: #d94f30;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.function-desc {
+  font-size: 24rpx;
+  color: #888;
+}
+
+/* 让第三个功能项占据整行 */
+.function-item:last-child {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 40rpx;
+}
+
+.function-item:last-child .icon-wrapper {
+  margin-right: 30rpx;
+  margin-bottom: 0;
+}
+
+.function-item:last-child .function-name {
+  margin-bottom: 8rpx;
+}
+
+.footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 40rpx 0;
+}
+
+.footer-text {
+  font-size: 28rpx;
+  color: #d94f30;
+}

@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/userMode/userMode",
+    "pages/caregiverMonitor/caregiverMonitor",
+    "pages/elderlyManage/elderlyManage",
+    "pages/addMedicine/addMedicine",
+    "pages/checkinStatus/checkinStatus",
+    "pages/medicineSettings/medicineSettings",
+    "pages/elderlyPanel/elderlyPanel",
+    "pages/quickCheckin/quickCheckin",
+    "pages/chat/chat",
+    "pages/medicineInfo/medicineInfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "AMIKA 智能服药助手",
+    "navigationBarTextStyle": "black"
+  },
+  "renderer": "webview"
+}

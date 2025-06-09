@@ -1,0 +1,31 @@
+<!-- pages/userMode/userMode.wxml -->
+<view class="container">
+  <view class="main-content">
+    <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+    <view class="slogan">因爱守护每一刻</view>
+    <view class="title">欢迎使用 AMIKA 智能服药助手</view>
+    <view class="subtitle">请选择您的使用模式</view>
+    <image class="speaker-icon" src="/images/speaker.png" bindtap="onSpeakerTap" mode="aspectFit" />
+    
+    <view class="mode-container">
+      <view class="mode-card" bindtap="selectMode" data-mode="elderly">
+        <image class="mode-icon" src="/images/elderly-icon.png" mode="aspectFit"></image>
+        <text class="mode-label">我是老人</text>
+        <view class="mode-desc">适合自己用药的老人</view>
+      </view>
+      
+      <view class="mode-card" bindtap="selectMode" data-mode="caregiver">
+        <image class="mode-icon" src="/images/caregiver-icon.png" mode="aspectFit"></image>
+        <text class="mode-label">我是家属</text>
+        <view class="mode-desc">适合远程守护的家属</view>
+      </view>
+    </view>
+  </view>
+  <view class="footer-links">
+    <text class="footer-link" bindtap="goAbout">关于我们</text>
+    <text class="footer-divider">|</text>
+    <text class="footer-link" bindtap="goPrivacy">隐私政策</text>
+    <text class="footer-divider">|</text>
+    <text class="footer-link" bindtap="toggleContrast">高对比度模式</text>
+  </view>
+</view>

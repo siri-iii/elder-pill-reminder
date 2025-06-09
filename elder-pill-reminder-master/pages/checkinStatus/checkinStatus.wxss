@@ -1,0 +1,148 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: linear-gradient(180deg, #fff6f0 0%, #ffe3d3 100%);
+  box-sizing: border-box;
+}
+
+.card {
+  width: 92vw;
+  max-width: 600rpx;
+  background: #fff;
+  border-radius: 36rpx;
+  box-shadow: 0 12rpx 36rpx rgba(217, 79, 48, 0.10);
+  padding: 36rpx 32rpx 48rpx 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8rpx;
+}
+
+.title {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #d94f30;
+  margin-bottom: 8rpx;
+  text-align: center;
+}
+
+.divider {
+  width: 100%;
+  height: 0;
+  border-bottom: 2rpx dashed #ffe3d3;
+  margin: 24rpx 0 24rpx 0;
+  border-radius: 2rpx;
+}
+
+.elder-select-area, .date-select-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 0;
+}
+.elder-select-label {
+  font-size: 32rpx;
+  color: #d94f30;
+  font-weight: 600;
+  min-width: 120rpx;
+  line-height: 64rpx;
+  text-align: center;
+}
+.elder-select-value {
+  font-size: 36rpx;
+  color: #666;
+  padding: 0 28rpx;
+  background: #fff6f0;
+  border-radius: 18rpx;
+  border: 2rpx solid #eee;
+  min-width: 160rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.record-list {
+  width: 100%;
+  margin-top: 12rpx;
+}
+.record-item {
+  width: 92%;
+  max-width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: #fff6f0;
+  border-radius: 18rpx;
+  padding: 24rpx 24rpx;
+  margin-bottom: 18rpx;
+  box-shadow: 0 2rpx 8rpx #ffd6c2;
+  flex-wrap: wrap;
+}
+.record-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+  max-width: 60%;
+  word-break: break-all;
+}
+.record-medicine {
+  font-size: 34rpx;
+  color: #d94f30;
+  font-weight: 600;
+  word-break: break-all;
+}
+.record-time {
+  font-size: 28rpx;
+  color: #888;
+  word-break: break-all;
+}
+.record-status {
+  font-size: 32rpx;
+  font-weight: 700;
+  padding: 8rpx 24rpx;
+  border-radius: 16rpx;
+  min-width: 90rpx;
+  text-align: center;
+  max-width: 36%;
+  box-sizing: border-box;
+  word-break: break-all;
+}
+.record-status.done {
+  background: #e6f9e6;
+  color: #2eb82e;
+  border: 2rpx solid #2eb82e;
+}
+.record-status.pending {
+  background: #fffbe6;
+  color: #ff9900;
+  border: 2rpx solid #ff9900;
+}
+.record-status.missed {
+  background: #fff0f0;
+  color: #d94f30;
+  border: 2rpx solid #d94f30;
+}
+.no-record {
+  width: 100%;
+  text-align: center;
+  color: #aaa;
+  font-size: 30rpx;
+  margin-top: 32rpx;
+} 

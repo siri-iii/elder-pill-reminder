@@ -1,0 +1,6 @@
+<!-- pages/quickCheckin/quickCheckin.wxml -->
+<view class="container">
+  <view class="checkin-icon">💊</view>
+  <view class="checkin-text">确认已服用药品吗？</view>
+  <button class="confirm-button" bindtap="confirmCheckin">确认服药</button>
+</view>

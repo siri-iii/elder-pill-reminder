@@ -1,0 +1,16 @@
+<!-- pages/medicineSettings/medicineSettings.wxml -->
+<view class="container">
+  <view class="medicine-list">
+    <view class="list-title">药品清单</view>
+    <block wx:for="{{medicines}}" wx:key="index">
+      <view class="medicine-item">
+        <text>{{item.name}} - {{item.dosage}} - {{item.time}}</text>
+        <view class="item-actions">
+          <button size="mini" bindtap="editMedicine" data-index="{{index}}">编辑</button>
+          <button size="mini" bindtap="deleteMedicine" data-index="{{index}}">删除</button>
+        </view>
+      </view>
+    </block>
+  </view>
+  <button class="add-button" bindtap="addMedicine">添加新药品</button>
+</view>

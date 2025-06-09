@@ -1,0 +1,7 @@
+<view class="privacy-container">
+  <view class="privacy-title">隐私政策</view>
+  <view class="privacy-content">
+    我们承诺严格保护您的个人信息安全，所有数据仅用于健康管理相关服务，不会泄露给第三方。
+    <br/>如有疑问请联系我们。
+  </view>
+</view> 
