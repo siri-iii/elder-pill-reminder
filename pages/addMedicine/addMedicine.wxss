@@ -1,4 +1,3 @@
-/* pages/addMedicine/addMedicine.wxss */
 .container {
   min-height: 100vh;
   display: flex;
@@ -17,6 +16,7 @@
   border-radius: 36rpx;
   box-shadow: 0 12rpx 36rpx rgba(217, 79, 48, 0.10);
   padding: 36rpx 32rpx 48rpx 32rpx;
+  margin: 30rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,11 +55,12 @@
 .elder-select-area {
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 16rpx;
+  justify-content: center;
+  gap: 30rpx;
   margin-bottom: 0;
 }
+
 .elder-select-label {
   font-size: 32rpx;
   color: #d94f30;
@@ -68,6 +69,7 @@
   line-height: 64rpx;
   text-align: center;
 }
+
 .elder-select-value {
   font-size: 36rpx;
   color: #666;
@@ -106,9 +108,9 @@ form {
 }
 
 .form-input {
-  width: 98%;
+  width: 450rpx;
   height: 64rpx;
-  font-size: 36rpx;
+  font-size: 20rpx;
   border: 2rpx solid #d94f30;
   border-radius: 18rpx;
   padding: 0 28rpx;
@@ -120,9 +122,11 @@ form {
   font-family: inherit;
   transition: border 0.2s;
 }
+
 .form-input:focus, .textarea:focus {
   border: 2rpx solid #ff7a59;
 }
+
 .textarea {
   min-height: 120rpx;
   resize: none;
@@ -147,6 +151,7 @@ form {
   align-items: center;
   justify-content: center;
 }
+
 .medicine-img {
   width: 100%;
   height: 180rpx;
@@ -155,6 +160,7 @@ form {
   background: #fff6f0;
   object-fit: cover;
 }
+
 .add-icon {
   position: absolute;
   left: 50%;
@@ -166,7 +172,7 @@ form {
 }
 
 .submit-btn {
-  width: 98%;
+  width: 100%;
   background: linear-gradient(90deg, #ffb199 0%, #ff7a59 100%);
   color: #fff;
   border-radius: 32rpx;
@@ -180,6 +186,7 @@ form {
   transition: background 0.2s, box-shadow 0.2s;
   letter-spacing: 2rpx;
 }
+
 .submit-btn:active {
   background: linear-gradient(90deg, #ff7a59 0%, #ffb199 100%);
   box-shadow: 0 2rpx 8rpx #ffd6c2;

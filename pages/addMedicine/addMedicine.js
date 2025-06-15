@@ -1,28 +1,51 @@
 Page({
   data: {
-    elderNames: ['张三', '李四'], // 模拟老人列表
+    elderNames: [], 
     elderIndex: 0,
     form: {
       name: '',
       img: '',
-      function: '',
-      frequency: ''
+      dosage: '',
+      date: '',
+      time: '',
+      date: '',
+      method: '',
     }
   },
+
+  onLoad() {
+    const elders = wx.getStorageSync('elders_data') || []
+    this.setData({
+      elderNames: elders.map(item => item.name)
+    })
+  },
+
   onElderChange(e) {
     this.setData({ elderIndex: e.detail.value })
   },
+
   onNameInput(e) {
     this.setData({ 'form.name': e.detail.value })
   },
-  onFunctionInput(e) {
-    this.setData({ 'form.function': e.detail.value })
+
+  onDosageInput(e) {
+    this.setData({ 'form.dosage': e.detail.value })
   },
-  onFrequencyInput(e) {
-    this.setData({ 'form.frequency': e.detail.value })
+
+  onDateChange(e) {
+    this.setData({ 'form.date': e.detail.value })
   },
+
+  onTimeChange(e) {
+    this.setData({ 'form.time': e.detail.value })
+  },
+
+  onMethodInput(e) {
+    this.setData({ 'form.method': e.detail.value })
+  },
+
   chooseImage() {
-    wx.chooseImage({
+    wx.chooseMedia({
       count: 1,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
@@ -31,18 +54,23 @@ Page({
       }
     })
   },
+
   onSubmit(e) {
-    const { name, img, function: func, frequency } = this.data.form
-    const { elderNames, elderIndex } = this.data
-    if (!name || !func || !frequency) {
+    const { name, dosage, date, time, method } = this.data.form
+    if (!name || !dosage || !date || !time || !method) {
       wx.showToast({ title: '请填写完整信息', icon: 'none' })
       return
     }
-    // 这里可以调用后端API保存药品信息，带上elderNames[elderIndex]
+    const reminders = wx.getStorageSync('medicine_reminders') || []
+    reminders.push({name, dosage, date, time, method, img: this.data.form.img, taken: false})
+    wx.setStorageSync('medicine_reminders', reminders)
+    const today = new Date().toISOString().split('T')[0]
+    if (date === today) {
+      const medications = wx.getStorageSync('medications') || []
+      medications.push({name,dosage,method,time,taken: false})
+      wx.setStorageSync('medications', medications)
+    }
     wx.showToast({ title: '添加成功', icon: 'success' })
-    // 清空表单
-    this.setData({
-      form: { name: '', img: '', function: '', frequency: '' }
-    })
+    this.setData({ form: { name: '', dosage: '', img: '', time: '', date: '', method: '' } }) 
   }
 }) 

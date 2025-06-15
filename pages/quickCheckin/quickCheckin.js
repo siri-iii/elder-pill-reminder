@@ -1,30 +1,52 @@
-// pages/quickCheckin/quickCheckin.js
+const STORAGE_KEY = 'medications'
+
 Page({
   data: {
-    // 页面的初始数据
+    currentDate: '',
+    medications: []
   },
-  onLoad: function (options) {
-    // 页面加载时执行的函数
+
+  onLoad() {
+    this.setData({
+      currentDate: this.getCurrentDate()
+    });
+    this.loadMedicationStatus();
   },
-  confirmCheckin: function () {
-    // 确认打卡
+
+  getCurrentDate() {
+    const date = new Date();
+    const week = ['日', '一', '二', '三', '四', '五', '六'];
+    return `${date.getMonth()+1}月${date.getDate()}日 星期${week[date.getDay()]}`;
+  },
+
+  loadMedicationStatus() {
+    wx.getStorage({
+      key: STORAGE_KEY,
+      success: (res) => {
+        this.setData({medications: res.data || [] });
+      },
+    })
+  },
+
+  toggleMedication(e) {
+    const index = e.currentTarget.dataset.index;
+    let newMedications = this.data.medications;
+    newMedications[index].taken = !newMedications[index].taken;
+    const reminders = wx.getStorageSync('medicine_reminders') || [];
+    const today = new Date().toISOString().split('T')[0]
+    reminders.forEach(reminder => {
+    if (reminder.name === newMedications[index].name && 
+        reminder.time === newMedications[index].time &&
+        reminder.date === today) {
+      reminder.taken = newMedications[index].taken;
+    }
+    });
+    this.setData({ medications: newMedications });
+    wx.setStorageSync('medications', newMedications);
+    wx.setStorageSync('medicine_reminders', reminders);
     wx.showToast({
-      title: '已服用',
-      icon: 'success',
-      duration: 2000
-    })
-    // 模拟语音提示
-    wx.showModal({
-      title: '语音提示',
-      content: '已服用药品，请勿忘记',
-      showCancel: false,
-      success (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-          // 返回主页
-          wx.navigateBack()
-        }
-      }
-    })
+      title: newMedications[index].taken ? '打卡成功' : '已取消打卡',
+      icon: 'none'
+    });
   }
-})
+});

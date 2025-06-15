@@ -1,0 +1,80 @@
+<!-- 药物知识科普页面 -->
+<view class="container">
+  <view class="header">
+    <text class="title">药物知识科普</text>
+    <text class="subtitle">了解药物，安全用药</text>
+  </view>
+
+  <view class="search-box">
+    <input class="search-input" 
+           placeholder="搜索药物名称或功效" 
+           bindinput="onSearchInput"
+           value="{{searchText}}"/>
+    <view class="search-icon">🔍</view>
+  </view>
+
+  <scroll-view scroll-y="true" class="medicine-list">
+    <view class="category-section" wx:for="{{filteredCategories}}" wx:key="name">
+      <view class="category-header">
+        <view class="category-title">{{item.name}}</view>
+        <view class="category-desc">常见{{item.name}}介绍</view>
+      </view>
+      <view class="medicine-grid">
+        <view class="medicine-card" 
+              wx:for="{{item.medicines}}" 
+              wx:key="name" 
+              wx:for-item="medicine"
+              bindtap="showMedicineDetail"
+              data-medicine="{{medicine}}">
+          <view class="medicine-icon-wrapper">
+            <image class="medicine-icon" src="{{medicine.icon}}" mode="aspectFit"></image>
+          </view>
+          <view class="medicine-info">
+            <text class="medicine-name">{{medicine.name}}</text>
+            <text class="medicine-desc">{{medicine.shortDesc}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 药物详情弹窗 -->
+  <view class="medicine-detail-modal" wx:if="{{showDetail}}">
+    <view class="modal-content">
+      <view class="modal-header">
+        <view class="header-left">
+          <image class="back-btn" src="/images/back.png" bindtap="closeDetail"></image>
+          <text class="modal-title">{{currentMedicine.name}}</text>
+        </view>
+        <image class="modal-close" src="/images/close.png" bindtap="closeDetail"></image>
+      </view>
+      
+      <view class="modal-section">
+        <view class="section-title">基本信息</view>
+        <view class="section-content">
+          通用名：{{currentMedicine.genericName}}
+        </view>
+      </view>
+
+      <view class="modal-section">
+        <view class="section-title">适应症</view>
+        <view class="section-content">{{currentMedicine.indications}}</view>
+      </view>
+
+      <view class="modal-section">
+        <view class="section-title">用法用量</view>
+        <view class="section-content">{{currentMedicine.usage}}</view>
+      </view>
+
+      <view class="modal-section">
+        <view class="section-title">注意事项</view>
+        <view class="section-content">{{currentMedicine.precautions}}</view>
+      </view>
+
+      <view class="modal-section">
+        <view class="section-title">不良反应</view>
+        <view class="section-content">{{currentMedicine.sideEffects}}</view>
+      </view>
+    </view>
+  </view>
+</view> 

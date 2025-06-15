@@ -3,6 +3,7 @@ Page({
   data: {
     medicines: []
   },
+  
   onLoad: function (options) {
     // 模拟获取药品列表
     this.setData({
@@ -12,15 +13,18 @@ Page({
       ]
     })
   },
+
   addMedicine: function () {
     // 添加新药品的逻辑
     console.log('Add new medicine')
   },
+
   editMedicine: function (e) {
     // 编辑药品的逻辑
     const index = e.currentTarget.dataset.index
     console.log('Edit medicine at index', index)
   },
+
   deleteMedicine: function (e) {
     // 删除药品的逻辑
     const index = e.currentTarget.dataset.index

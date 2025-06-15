@@ -2,7 +2,6 @@
 Page({
   data: {
     userInfo: null,
-    isHighContrast: false
   },
 
   onLoad() {
@@ -58,23 +57,6 @@ Page({
     } else {
       wx.navigateTo({
         url: '/pages/caregiverMonitor/caregiverMonitor'
-      })
-    }
-  },
-
-  // 高对比度模式切换
-  toggleContrast() {
-    this.setData({ isHighContrast: !this.data.isHighContrast })
-    const page = getCurrentPages().pop()
-    if (this.data.isHighContrast) {
-      wx.setNavigationBarColor({
-        frontColor: '#ffffff',
-        backgroundColor: '#000000'
-      })
-    } else {
-      wx.setNavigationBarColor({
-        frontColor: '#000000',
-        backgroundColor: '#ffffff'
       })
     }
   },

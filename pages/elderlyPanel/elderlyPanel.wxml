@@ -1,8 +1,22 @@
 <!-- pages/elderlyPanel/elderlyPanel.wxml -->
 <view class="container">
-  <view class="button-group">
-    <button class="panel-button" bindtap="goToChat">与大模型聊天</button>
-    <button class="panel-button" bindtap="goToMedicineInfo">药物知识科普</button>
-    <button class="panel-button" bindtap="goToQuickCheckin">一键打卡已服用</button>
+  <view class="title">老人操作面板</view>
+  <view class="subtitle">请选择您要进行的操作</view>
+  <view class="card-container">
+    <view class="card" bindtap="goToChat">
+      <image class="card-icon" src="/images/chat-icon.png" mode="aspectFit" />
+      <text class="card-title">与大模型聊天</text>
+      <text class="card-desc">暖心陪伴，解答疑问</text>
+    </view>
+    <view class="card" bindtap="goToMedicineInfo">
+      <image class="card-icon" src="/images/medicine-icon.png" mode="aspectFit" />
+      <text class="card-title">药物知识科普</text>
+      <text class="card-desc">了解药品信息，安全用药</text>
+    </view>
+    <view class="card" bindtap="goToQuickCheckin">
+      <image class="card-icon" src="/images/checkin-icon.png" mode="aspectFit" />
+      <text class="card-title">一键打卡已服用</text>
+      <text class="card-desc">快速记录服药情况</text>
+    </view>
   </view>
 </view>

@@ -1,6 +1,25 @@
-<!-- pages/quickCheckin/quickCheckin.wxml -->
 <view class="container">
-  <view class="checkin-icon">💊</view>
-  <view class="checkin-text">确认已服用药品吗？</view>
-  <button class="confirm-button" bindtap="confirmCheckin">确认服药</button>
+  <view class="header">
+    <text class="title">今日用药提醒</text>
+    <text class="date">{{currentDate}}</text>
+  </view>
+
+  <view class="medication-list">
+    <block wx:for="{{medications}}" wx:key="index">
+      <view class="medication-card {{item.taken ? 'taken' : ''}}" >
+        <view class="medication-info">
+          <text class="name">{{item.name}}</text>
+          <text class="dosage">{{item.dosage}}</text>
+          <text class="method">{{item.method}}</text>
+        </view>
+        <view class="time-container">
+          <text class="time">{{item.time}}</text>
+        </view>
+        <button class="check-btn {{item.taken ? 'checked' : ''}}" 
+          bindtap="toggleMedication" data-index="{{index}}">
+          {{item.taken ? '✓' : '打卡'}}
+        </button>
+      </view>
+    </block>
+  </view>
 </view>
