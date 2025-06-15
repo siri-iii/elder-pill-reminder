@@ -1,11 +1,12 @@
 <view class="container">
   <view class="card">
     <view class="card-header">
-      <view class="title">为老人添加药品信息</view>
+      <view class="title">添加服药提醒</view>
       <view class="icon-bg">
         <image class="top-icon" src="/images/medicine-icon.png" mode="aspectFit" />
       </view>
     </view>
+
     <view class="divider"></view>
     <view class="elder-select-area">
       <view class="elder-select-label">选择老人</view>
@@ -13,29 +14,49 @@
         <view class="elder-select-value">{{elderNames[elderIndex] || '请选择老人'}}</view>
       </picker>
     </view>
+
     <view class="divider"></view>
     <form bindsubmit="onSubmit">
       <view class="form-group">
         <view class="form-label">药品名称</view>
-        <input class="form-input" name="name" value="{{form.name}}" bindinput="onNameInput" />
+        <input class="form-input" placeholder="请输入名称" value="{{form.name}}" bindinput="onNameInput"/>
       </view>
+
       <view class="form-group">
         <view class="form-label">药品图片</view>
         <view class="medicine-img-wrap" bindtap="chooseImage">
-          <image class="medicine-img" src="{{form.img || '/images/medicine-placeholder.png'}}" mode="aspectFit" />
-          <image wx:if="{{!form.img}}" class="add-icon" src="/images/add-icon.png" mode="aspectFit" />
+          <image class="medicine-img" src="{{form.img}}" mode="aspectFit" />
+          <image wx:if="{{!form.img}}" class="add-icon" src="/images/medicine-placeholder.png" mode="aspectFit" />
         </view>
       </view>
+
       <view class="form-group">
-        <view class="form-label">药品功能/用途</view>
-        <textarea class="form-input textarea" name="function" value="{{form.function}}" bindinput="onFunctionInput" />
+        <view class="form-label">服用量</view>
+        <input class="form-input" placeholder="请输入剂量" value="{{form.dosage}}" bindinput="onDosageInput"/>
       </view>
+      
       <view class="form-group">
-        <view class="form-label">服用频次</view>
-        <input class="form-input" name="frequency" value="{{form.frequency}}" bindinput="onFrequencyInput" />
+        <view class="form-label">服药日期</view>
+        <picker mode="date" start="2020-01-01" end="2030-12-31" bindchange="onDateChange">
+          <input class="form-input" disabled placeholder="请选择日期" value="{{form.date}}"/>
+        </picker>
       </view>
+      
+      <view class="form-group">
+        <view class="form-label">服药时间</view>
+        <picker mode="time" bindchange="onTimeChange">
+          <input class="form-input" disabled  placeholder="请选择时间" value="{{form.time}}"/>
+        </picker>
+      </view>
+
+      <view class="form-group">
+        <view class="form-label">服药方式</view>
+        <input class="form-input" placeholder="请输入用药方式" value="{{form.method}}" bindinput="onMethodInput"/>
+      </view>
+
       <button class="submit-btn" formType="submit">添加药品</button>
     </form>
+
     <view class="tips">请确保药品信息准确，便于老人按时服药。</view>
   </view>
 </view> 

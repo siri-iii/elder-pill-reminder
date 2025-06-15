@@ -25,7 +25,5 @@
     <text class="footer-link" bindtap="goAbout">关于我们</text>
     <text class="footer-divider">|</text>
     <text class="footer-link" bindtap="goPrivacy">隐私政策</text>
-    <text class="footer-divider">|</text>
-    <text class="footer-link" bindtap="toggleContrast">高对比度模式</text>
   </view>
 </view>
